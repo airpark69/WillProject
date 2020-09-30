@@ -138,4 +138,3 @@ fabric.properties
 
 # Sonarlint plugin
 .idea/sonarlint
-.classpath
