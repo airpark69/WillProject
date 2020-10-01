@@ -69,6 +69,9 @@ public class sellingListAction implements Action {
 			
 		}
 		
+//		System.out.println("건수증감"+c2);
+//		System.out.println("금액증감"+c);
+		
 		
 
 		request.setAttribute("bookList", bookList);
