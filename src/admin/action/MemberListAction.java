@@ -1,11 +1,14 @@
 package admin.action;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import admin.svc.MemberListService;
+import book.svc.BookListService;
+import book.vo.BookBean;
 import member.action.Action;
 import member.vo.ActionForward;
 import member.vo.MemberBean;
@@ -27,13 +30,20 @@ public class MemberListAction extends ActionForward implements Action {
 		
 		
 		MemberListService MemberListService = new MemberListService();
+		BookListService booklist= new BookListService();
 		
+		ArrayList<MemberBean> MemberList =null;
+		ArrayList<BookBean> booklist2=null;
 		
 		int listCount = MemberListService.getListCount(target,table);
 		
-		
-		ArrayList<MemberBean> MemberList = MemberListService.getArticleList(page, limit);
-		 
+		if(request.getParameter("id")==null) {
+			MemberList = MemberListService.getArticleList(page, limit);
+			 booklist2 = booklist.getmmcount();	
+		}else if(request.getParameter("id")!=null) {
+			MemberList = MemberListService.getArticleList(page, limit, request.getParameter("id"));
+			 booklist2 = booklist.getmmcount();	
+		}
 		
 		
 		int maxPage = (int)((double)listCount / limit + 0.95);
@@ -52,9 +62,15 @@ public class MemberListAction extends ActionForward implements Action {
 		
 		pageinfo pageInfo = new pageinfo(page, maxPage, startPage, endPage, listCount);
 		
+		HashMap<String, BookBean> book=new HashMap<String, BookBean>();
+		for(BookBean bb : booklist2) {
+			book.put(bb.getMember_id(), bb);
+		}
 		
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("articlelist", MemberList);
+		request.setAttribute("book", book);
+//		request.setAttribute("booklist2", booklist2);
 		
 		
 		forward = new ActionForward();

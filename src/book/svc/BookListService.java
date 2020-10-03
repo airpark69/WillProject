@@ -7,6 +7,7 @@ import static book.db.JdbcUtil.getConnection;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.List;
 
 import book.dao.BookDAO;
 import book.vo.BookBean;
@@ -179,6 +180,77 @@ public class BookListService {
 
 		return result;
 
+	}
+
+	public ArrayList<BookBean> getmmcount() {
+		Connection con = getConnection();
+
+		BookDAO bookDAO = BookDAO.getInstance();
+
+		bookDAO.setConnection(con);
+
+		ArrayList<BookBean> booklist = bookDAO.selectcountsum();
+
+		close(con);
+
+		return booklist;
+	}
+	
+	public ArrayList<BookBean> getBooksearchList(String str1, String str2) {
+		Connection con = getConnection();
+
+		BookDAO bookDAO = BookDAO.getInstance();
+
+		bookDAO.setConnection(con);
+
+		ArrayList<BookBean> booklist = bookDAO.selectBooksearchList(str1, str2);
+
+		close(con);
+
+		return booklist;
+
+	}
+
+	public ArrayList<BookBean> getBookstateList(String state) {
+		Connection con = getConnection();
+
+		BookDAO bookDAO = BookDAO.getInstance();
+
+		bookDAO.setConnection(con);
+
+		ArrayList<BookBean> booklist = bookDAO.selectBookstateList(state);
+
+		close(con);
+
+		return booklist;
+	}
+
+	public ArrayList<BookBean> getBookstateList() {
+		Connection con = getConnection();
+
+		BookDAO bookDAO = BookDAO.getInstance();
+
+		bookDAO.setConnection(con);
+
+		ArrayList<BookBean> booklist = bookDAO.selectBookstateList();
+
+		close(con);
+
+		return booklist;
+	}
+
+	public BookBean getbookdetail(int num) {
+		Connection con = getConnection();
+
+		BookDAO bookDAO = BookDAO.getInstance();
+
+		bookDAO.setConnection(con);
+
+		BookBean booklist = bookDAO.selectBookdetail(num);
+
+		close(con);
+
+		return booklist;
 	}
 	
 }
