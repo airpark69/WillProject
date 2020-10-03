@@ -19,6 +19,12 @@
 				today = yyyy + '-' + mm + '-' + dd;
 				document.getElementById("pickup_date").setAttribute("min",
 						today);
+				document.getElementById("pickup_date").setAttribute("value",
+						today);
+				document.getElementById("end_date").setAttribute("min",
+						today);
+				document.getElementById("end_date").setAttribute("value",
+						today);
 
 				$('#pickup_date').change(
 						function() {
@@ -131,11 +137,11 @@
                     <div class="booka-car-content">
                             <div class="pick-location bookinput-item">
                                 <select class="custom-select">
-                                  <option selected>Pick Location</option>
-                                  <option value="1">Dhaka</option>
-                                  <option value="2">Comilla</option>
-                                  <option value="3">Barishal</option>
-                                  <option value="3">Rangpur</option>
+                                  <option selected>지역을 선택해주세요</option>
+                                  <option value="1">서울</option>
+                                  <option value="2">대전</option>
+                                  <option value="3">부산</option>
+                                  <option value="3">제주</option>
                                 </select>
                             </div>
 
@@ -150,7 +156,7 @@
 
                             <div class="car-choose bookinput-item">
                                 <select class="custom-select" name="SelCar">
-                                  <option selected>Choose Car</option>
+                                  <option selected>차량 종류</option>
                                   <option name="SelCar"  value="경차">경차</option>
                                   <option name="SelCar"  value="소형">소형</option>
                                   <option name="SelCar"  value="중형">중형</option>
@@ -166,7 +172,7 @@
                             </div>
 
                             <div class="bookcar-btn bookinput-item">
-                                <button type="submit">Book Car</button>
+                                <button type="submit">예약하기</button>
                             </div>
                         </form>
                     </div>

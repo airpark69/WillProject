@@ -1,15 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-
-
-
-
-</head>
-<body>
 
 
   <section id="footer-area">
@@ -147,6 +135,3 @@
 
     <!--=== Mian Js ===-->
     <script src="assets/js/main.js"></script>
-
-</body>
-</html>

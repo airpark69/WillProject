@@ -41,6 +41,12 @@
 				today = yyyy + '-' + mm + '-' + dd;
 				document.getElementById("pickup_date").setAttribute("min",
 						today);
+				
+				var offset = $("#pickup_date").offset();
+		        $('html, body').animate({scrollTop : offset.top}, 400);
+		        
+		        /* document.getElementById("scroll").scrollTop = offset.top; */
+
 
 				$('#pickup_date').change(
 						function() {
@@ -93,8 +99,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<h3>예약 페이지 2</h3>
+<title>WillRent 예약페이지</title>
 
 <%
 System.out.println(pickup);
@@ -113,7 +118,27 @@ function search(id){
 		
 </script>
 
-<body>
+<body class="loader-active">
+
+<jsp:include page="/inc/Header.jsp" />
+
+<section id="home-area">
+        <div class="home-slider-item slider-bg-1 overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="slideshowcontent">
+                            <h1>BOOK A CAR TODAY!</h1>
+                            <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+</section>
 
 <form action="BookForm2.bk" method="post">
 <h2>기간선택</h2>
@@ -143,6 +168,59 @@ function search(id){
 
 <input type="submit" value="재검색"><br>
 </form>
+
+ <!--== Book A Car Area Start ==-->
+    <div id="book-a-car">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="booka-car-content">
+                            <div class="pick-location bookinput-item">
+                                <select class="custom-select">
+                                  <option selected>지역을 선택해주세요</option>
+                                  <option value="1">서울</option>
+                                  <option value="2">대전</option>
+                                  <option value="3">부산</option>
+                                  <option value="3">제주</option>
+                                </select>
+                            </div>
+
+                       <form action="BookForm2.bk" method="post">
+                            <div class="pick-date bookinput-item">
+                               <input type="date" id="pickup_date" name="pickup_date">
+                            </div>
+
+                            <div class="retern-date bookinput-item">
+                               <input type="date" id="end_date" name="end_date">
+                            </div>
+
+                            <div class="car-choose bookinput-item">
+                                <select class="custom-select" name="SelCar">
+                                  <option selected>차량 종류</option>
+                                  <option name="SelCar"  value="경차">경차</option>
+                                  <option name="SelCar"  value="소형">소형</option>
+                                  <option name="SelCar"  value="중형">중형</option>
+                               
+                                   <option name="SelCar"  value="준대형">준대형</option>
+                                   <option name="SelCar"  value="중형">중형</option>
+                                   <option name="SelCar"  value="대형">대형</option>
+                                   <option name="SelCar"  value="SUVㅣRV">SUV | RV</option>
+                                   <option name="SelCar"  value="전기차">전기차</option>
+                                   <option name="SelCar"  value="수입차">수입차</option>
+                                                    
+                                </select>
+                            </div>
+
+                            <div class="bookcar-btn bookinput-item">
+                                <button type="submit">예약하기</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== Book A Car Area End ==-->
 
 
 <form action="BookPro.bk" method="post">
@@ -224,6 +302,9 @@ function search(id){
 			</table>
 
 </form>
+
+<jsp:include page="/inc/Footer.jsp"/>
+
 </body>
 
 
