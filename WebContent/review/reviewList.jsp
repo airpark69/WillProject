@@ -15,59 +15,6 @@ int endPage = pageInfo.getEndPage();
     
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-<head>
-<meta charset="UTF-8">
-<title>WillRent - Review</title>
-</head>
-<body>
-<table>
-<%
-if(articleList != null && listCount>0){
-%>
- <tr>
- <td>번호</td>
- <td>제목</td>
- <td>작성자</td>
- <td>날짜</td>
- <td>조회수</td>
- <td>추천수</td>
- </tr>
- <%for(int i=0; i<articleList.size(); i++) {%>
- <tr>
- <td><%=articleList.get(i).getReview_num() %></td>
- <td><a href="ReviewDetail.rw?review_num=<%=articleList.get(i).getReview_num() %>&page=<%=nowPage %>"><%=articleList.get(i).getReview_subject() %></a></td>
- <td><%=articleList.get(i).getMember_id() %></td>
- <td><%=articleList.get(i).getReview_date() %></td>
- <td><%=articleList.get(i).getReview_readcount() %></td>
- <td><%=articleList.get(i).getReview_recocount() %></td>
- </tr>
- <%
-    }
- %>
-</table>
-
-<input type="button" value="글쓰기" onclick="location.href='ReviewWriteForm.rw'">
-    <%if(nowPage<=1){ %>
-    [이전]
-    <%}else{ %>
-        <a href="ReviewList.rw?page=<%=nowPage-1 %>">[이전]</a>
-    <%} %>
-    <%for(int a=startPage; a<=endPage; a++){ 
-        if(a==nowPage){%>
-            [<%=a %>]
-    <%} else { %>
-        <a href="ReviewList.rw?page=<%=a %>">[<%=a %>]</a>
-        <%} %>    
-    <%} %>
-    <%if(nowPage>=maxPage){ %>
-        [다음]
-    <%}else{ %>    
-        <a href="ReviewList.rw?page=<%=nowPage+1 %>">[다음]</a>
-    <%} %>
-<%}else{
-	%>등록된 글이 없습니다.
-	<%} %>
-	
 <!--  -->	
 <head>
     <meta charset="utf-8">
@@ -115,109 +62,7 @@ if(articleList != null && listCount>0){
         </div>
     </div>
     <!--== Preloader Area End ==-->
-
-    <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">
-        <!--== Header Top Start ==-->
-        <div id="header-top" class="d-none d-xl-block">
-            <div class="container">
-                <div class="row">
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-left">
-                        <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-center">
-                        <i class="fa fa-mobile"></i> +1 800 345 678
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-center">
-                        <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <!--== Social Icons End ==-->
-                </div>
-            </div>
-        </div>
-        <!--== Header Top End ==-->
-
-        <!--== Header Bottom Start ==-->
-        <div id="header-bottom">
-            <div class="container">
-                <div class="row">
-                    <!--== Logo Start ==-->
-                    <div class="col-lg-4">
-                        <a href="index.html" class="logo">
-                            <img src="assets/img/logo.png" alt="JSOFT">
-                        </a>
-                    </div>
-                    <!--== Logo End ==-->
-
-                    <!--== Main Menu Start ==-->
-                    <div class="col-lg-8 d-none d-xl-block">
-                        <nav class="mainmenu alignright">
-                            <ul>
-                                <li><a href="#">Home</a>
-                                    <ul>
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index2.html">Home 2</a></li>
-                                        <li><a href="index3.html">Home 3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="services.html">services</a></li>
-                                <li><a href="#">Cars</a>
-                                    <ul>
-                                        <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                        <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                        <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                        <li><a href="car-details.html">Car Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="index.html">Pages</a>
-                                    <ul>
-                                        <li><a href="package.html">Pricing</a></li>
-                                        <li><a href="driver.html">Driver</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="help-desk.html">Help Desk</a></li>
-                                        <li><a href="login.html">Log In</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul>
-                                </li>
-                                <li class="active"><a href="#">Blog</a>
-                                    <ul>
-                                        <li><a href="article.html">Blog Page</a></li>
-                                        <li><a href="article-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!--== Main Menu End ==-->
-                </div>
-            </div>
-        </div>
-        <!--== Header Bottom End ==-->
-    </header>
-    <!--== Header Area End ==-->
-
+<jsp:include page="../inc/Header.jsp" />
     <!--== Page Title Area Start ==-->
     <section id="page-title-area" class="section-padding overlay">
         <div class="container">
@@ -236,35 +81,37 @@ if(articleList != null && listCount>0){
     </section>
     <!--== Page Title Area End ==-->
 
-    <!--== Car List Area Start ==-->
-                <!-- Single Articles Start -->
+   
+                <%
+							if(articleList != null && listCount>0){%>
     <div id="blog-page-content" class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-15">
-                                        <%
-							if(articleList != null && listCount>0){
-								for(int i=0; i<articleList.size(); i++) {
-										%>
+                                        
                     <article class="single-article">
                         <div class="row">
+                        <%
+								for(int i=0; i<articleList.size(); i++) {
+										%>
                             <!-- Articles Thumbnail Start -->
                             <div class="col-lg-4">
                                 <div class="article-thumb">
                                     <img src="assets/img/article/arti-thumb-1.jpg" alt="JSOFT">
+                            <!-- Articles Thumbnail End -->
                                 </div>
                             </div>
-                            <!-- Articles Thumbnail End -->
 
                             <!-- Articles Content Start -->
                             <div class="col-lg-5">
                                 <div class="display-table">
                                     <div class="display-table-cell">
                                         <div class="article-body">
-                                            <h3><a href="article-details.html"><%=articleList.get(i).getReview_subject() %></a></h3>
+                                            <h3><a href="ReviewDetail.rw?review_num=<%=articleList.get(i).getReview_num() %>&page=<%=nowPage %>"><%=articleList.get(i).getReview_subject() %></a></h3>
                                             <div class="article-meta">
                                                 <a class="author">작성자<span><%=articleList.get(i).getMember_id() %></span></a>
                                                 <a class="commnet">추천 <span><%=articleList.get(i).getReview_recocount() %></span></a>
+                                                <a class="commnet">조회수 <span><%=articleList.get(i).getReview_readcount() %></span></a>
                                             </div>
                                             <div class="article-date"><span class="month"><%=articleList.get(i).getReview_date() %></span></div>
 										    <a href="ReviewDetail.rw?review_num=<%=articleList.get(i).getReview_num() %>&page=<%=nowPage %>" class="readmore-btn"><%=articleList.get(i).getReview_subject() %><i class="fa fa-long-arrow-right"></i></a>
@@ -272,30 +119,49 @@ if(articleList != null && listCount>0){
                                     </div>
                                 </div>
                             </div>
-                                            <%}
-								}%>
-								</div></article></div></div>
+                                             <%}%>
+								</div>
+								</article>
+								</div>
+								</div>
+								<%}%>
                            
             <div class="row">
                 <!-- Page Pagination Start -->
                 <div class="col-lg-12">
+                <%String id=(String)session.getAttribute("Member_id");
+                String snsid=(String)session.getAttribute("Member_snsid");
+                String totalId = null;
+                if(id != null){
+                	totalId=id;
+                }else if(snsid!=null){
+                	totalId=snsid;
+                }%>
+                <%
+                if(totalId != null){
+                	%>
+                 <a href="ReviewWriteForm.rw" class="readmore-btn">글쓰기</a>
+                 <%} %>
                     <div class="page-pagi">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item">
-                                 <%if(nowPage<=1){ %>
-    <%}else{ %><a class="page-link" href="ReviewList.rw?page=<%=nowPage-1 %>">Previous</a> <%} %></li>
-     <%for(int a=startPage; a<=endPage; a++){ 
-        if(a==nowPage){%>
-            
-    <%} else { %>
-                                <li class="page-item active"><a class="page-link" href="ReviewList.rw?page=<%=a %>"><%=a %></a></li>
-                                        <%} %>    
-    <%} %>
-                                <li class="page-item">
-                                 <%if(nowPage>=maxPage){ %>
-       
-    <%}else{ %>  <a class="page-link" href="ReviewList.rw?page=<%=nowPage+1 %>">Next</a></li><%} %>
+                                <%if(nowPage<=1) {%>
+                                <li class="page-item"><a class="page-link">Previous</a></li>
+                                <%}else{ %>
+                                <li class="page-item"><a class="page-link" href="ReviewList.rw?page=<%=nowPage-1 %>">Previous</a></li><%} %>
+                                
+                                <%for(int a=startPage; a<=endPage; a++){
+                                	if(a==nowPage){%>
+                                	<li class="page-item active"><a class="page-link"><%=a %></a><%}else{ %>
+                                	
+                                <li class="page-item active"><a class="page-link" href="ReviewList.rw?page=<%=a %>"><%=a %></a>
+                                <%} %>
+                                <%} %>
+                                
+                               <%if(nowPage>=maxPage){ %>
+                               <li class="page-item"><a class="page-link" href="#">Next</a>
+                               <%}else{ %>
+                                <li class="page-item"><a class="page-link" href="ReviewList.rw?page=<%=nowPage+1 %>">Next</a><%} %>
                             </ul>
                         </nav>
                     </div>
@@ -307,149 +173,6 @@ if(articleList != null && listCount>0){
     <!--== Car List Area End ==-->
 
     <!--== Footer Area Start ==-->
-    <section id="footer-area">
-        <!-- Footer Widget Start -->
-        <div class="footer-widget-area">
-            <div class="container">
-                <div class="row">
-                    <!-- Single Footer Widget Start -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-footer-widget">
-                            <h2>About Us</h2>
-                            <div class="widget-body">
-                                <img src="assets/img/logo.png" alt="JSOFT">
-                                <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
-
-                                <div class="newsletter-area">
-                                    <form action="index.html">
-                                        <input type="email" placeholder="Subscribe Our Newsletter">
-                                        <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Footer Widget End -->
-
-                    <!-- Single Footer Widget Start -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-footer-widget">
-                            <h2>Recent Posts</h2>
-                            <div class="widget-body">
-                                <ul class="recent-post">
-                                    <li>
-                                        <a href="#">
-                                           Hello Bangladesh! 
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                          Lorem ipsum dolor sit amet
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                           Hello Bangladesh! 
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            consectetur adipisicing elit?
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Footer Widget End -->
-
-                    <!-- Single Footer Widget Start -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-footer-widget">
-                            <h2>get touch</h2>
-                            <div class="widget-body">
-                                <p>Lorem ipsum doloer sited amet, consectetur adipisicing elit. nibh auguea, scelerisque sed</p>
-
-                                <ul class="get-touch">
-                                    <li><i class="fa fa-map-marker"></i> 800/8, Kazipara, Dhaka</li>
-                                    <li><i class="fa fa-mobile"></i> +880 01 86 25 72 43</li>
-                                    <li><i class="fa fa-envelope"></i> kazukamdu83@gmail.com</li>
-                                </ul>
-                                <a href="https://goo.gl/maps/b5mt45MCaPB2" class="map-show" target="_blank">Show Location</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Footer Widget End -->
-                </div>
-            </div>
-        </div>
-        <!-- Footer Widget End -->
-
-        <!-- Footer Bottom Start -->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer Bottom End -->
-    </section>
-    <!--== Footer Area End ==-->
-
-    <!--== Scroll Top Area Start ==-->
-    <div class="scroll-top">
-        <img src="assets/img/scroll-top.png" alt="JSOFT">
-    </div>
-    <!--== Scroll Top Area End ==-->
-
-    <!--=======================Javascript============================-->
-    <!--=== Jquery Min Js ===-->
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <!--=== Jquery Migrate Min Js ===-->
-    <script src="assets/js/jquery-migrate.min.js"></script>
-    <!--=== Popper Min Js ===-->
-    <script src="assets/js/popper.min.js"></script>
-    <!--=== Bootstrap Min Js ===-->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!--=== Gijgo Min Js ===-->
-    <script src="assets/js/plugins/gijgo.js"></script>
-    <!--=== Vegas Min Js ===-->
-    <script src="assets/js/plugins/vegas.min.js"></script>
-    <!--=== Isotope Min Js ===-->
-    <script src="assets/js/plugins/isotope.min.js"></script>
-    <!--=== Owl Caousel Min Js ===-->
-    <script src="assets/js/plugins/owl.carousel.min.js"></script>
-    <!--=== Waypoint Min Js ===-->
-    <script src="assets/js/plugins/waypoints.min.js"></script>
-    <!--=== CounTotop Min Js ===-->
-    <script src="assets/js/plugins/counterup.min.js"></script>
-    <!--=== YtPlayer Min Js ===-->
-    <script src="assets/js/plugins/mb.YTPlayer.js"></script>
-    <!--=== Magnific Popup Min Js ===-->
-    <script src="assets/js/plugins/magnific-popup.min.js"></script>
-    <!--=== Slicknav Min Js ===-->
-    <script src="assets/js/plugins/slicknav.min.js"></script>
-
-    <!--=== Mian Js ===-->
-    <script src="assets/js/main.js"></script>	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+   <jsp:include page="../inc/Footer.jsp" />
 </body>
 </html>
