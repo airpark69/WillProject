@@ -238,6 +238,11 @@
 	<!--== Services Area Start ==-->
 	<section id="service-area" class="section-padding">
 		<div class="container">
+		    <div class="row">
+		    <jsp:include page="/map/maptest.jsp"/>
+		    </div>
+		
+		
 			<div class="row">
 				<!-- Section Title Start -->
 				<div class="col-lg-12">
