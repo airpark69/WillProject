@@ -147,34 +147,33 @@ function search(id){
 
 </section>
 
-<form action="BookForm2.bk" method="post">
-<h2>기간선택</h2>
+<!-- <form action="BookForm2.bk" method="post"> -->
+<!-- <h2>기간선택</h2> -->
 
-인수날짜 : <input type="date" id="pickup_date" name="pickup_date" value="<%=pickup %>"><br>
-도착날짜 : <input type="date" id="end_date" name="end_date" value="<%=end %>"><br>
 
-<h2>차량유형 선택</h2>	
+
+<!-- <h2>차량유형 선택</h2 >	 -->
  
-<table id="Car_list">
-<tr>
-<td>경차<input type="radio" name="SelCar" value="경차" <%if(SelCarType.equals("경차")){ %>checked<%} %>></td>
-<td>소형<input type="radio" name="SelCar" value="소형" <%if(SelCarType.equals("소형")){ %>checked<%} %>></td>
-<td>중형<input type="radio" name="SelCar"  value="중형" <%if(SelCarType.equals("중형")){ %>checked<%} %>></td>
-</tr>
-<tr>
-<td>준대형<input type="radio" name="SelCar"  value="준대형" <%if(SelCarType.equals("준대형")){ %>checked<%} %>></td>
-<td>대형<input type="radio" name="SelCar"  value="대형" <%if(SelCarType.equals("대형")){ %>checked<%} %>></td>
-<td>승합<input type="radio" name="SelCar"  value="승합" <%if(SelCarType.equals("승합")){ %>checked<%} %>></td>
-</tr>
-<tr>
-<td>SUV/RV<input type="radio" name="SelCar"  value="SUVㅣRV" <%if(SelCarType.equals("SUVㅣRV")){ %>checked<%} %>></td>
-<td>전기차<input type="radio" name="SelCar"  value="전기차" <%if(SelCarType.equals("전기차")){ %>checked<%} %>></td>
-<td>수입차<input type="radio" name="SelCar"  value="수입차"  <%if(SelCarType.equals("수입차")){ %>checked<%} %>></td>
-</tr>
-</table>
+<!-- <table id="Car_list"> -->
+<!-- <tr> -->
+<%-- <td>경차<input type="radio" name="SelCar" value="경차" <%if(SelCarType.equals("경차")){ %>checked<%} %>></td> --%>
+<%-- <td>소형<input type="radio" name="SelCar" value="소형" <%if(SelCarType.equals("소형")){ %>checked<%} %>></td> --%>
+<%-- <td>중형<input type="radio" name="SelCar"  value="중형" <%if(SelCarType.equals("중형")){ %>checked<%} %>></td> --%>
+<!-- </tr> -->
+<!-- <tr> -->
+<%-- <td>준대형<input type="radio" name="SelCar"  value="준대형" <%if(SelCarType.equals("준대형")){ %>checked<%} %>></td> --%>
+<%-- <td>대형<input type="radio" name="SelCar"  value="대형" <%if(SelCarType.equals("대형")){ %>checked<%} %>></td> --%>
+<%-- <td>승합<input type="radio" name="SelCar"  value="승합" <%if(SelCarType.equals("승합")){ %>checked<%} %>></td> --%>
+<!-- </tr> -->
+<!-- <tr> -->
+<%-- <td>SUV/RV<input type="radio" name="SelCar"  value="SUVㅣRV" <%if(SelCarType.equals("SUVㅣRV")){ %>checked<%} %>></td> --%>
+<%-- <td>전기차<input type="radio" name="SelCar"  value="전기차" <%if(SelCarType.equals("전기차")){ %>checked<%} %>></td> --%>
+<%-- <td>수입차<input type="radio" name="SelCar"  value="수입차"  <%if(SelCarType.equals("수입차")){ %>checked<%} %>></td> --%>
+<!-- </tr> -->
+<!-- </table> -->
 
-<input type="submit" value="재검색"><br>
-</form>
+<!-- <input type="submit" value="재검색"><br> -->
+<!-- </form> -->
 
  <!--== Book A Car Area Start ==-->
     <div id="book-a-car">
@@ -192,34 +191,34 @@ function search(id){
                                 </select>
                             </div>
 
+
                        <form action="BookForm2.bk" method="post">
                             <div class="pick-date bookinput-item">
-                               <input type="date" id="pickup_date" name="pickup_date">
+                               <input type="date" id="pickup_date" name="pickup_date" value="<%=pickup %>">
                             </div>
 
                             <div class="retern-date bookinput-item">
-                               <input type="date" id="end_date" name="end_date">
+                               <input type="date" id="end_date" name="end_date" value="<%=end %>">
                             </div>
 
                             <div class="car-choose bookinput-item">
                                 <select class="custom-select" name="SelCar">
                                   <option selected>차량 종류</option>
-                                  <option name="SelCar"  value="경차">경차</option>
-                                  <option name="SelCar"  value="소형">소형</option>
-                                  <option name="SelCar"  value="중형">중형</option>
-                               
-                                   <option name="SelCar"  value="준대형">준대형</option>
-                                   <option name="SelCar"  value="중형">중형</option>
-                                   <option name="SelCar"  value="대형">대형</option>
-                                   <option name="SelCar"  value="SUVㅣRV">SUV | RV</option>
-                                   <option name="SelCar"  value="전기차">전기차</option>
-                                   <option name="SelCar"  value="수입차">수입차</option>
+                                  <option name="SelCar" value="경차" <%if(SelCarType.equals("경차")){ %>checked<%} %>>경차</option>
+                                  <option name="SelCar" value="소형" <%if(SelCarType.equals("소형")){ %>checked<%} %>>소형</option>
+                                  <option name="SelCar" value="중형" <%if(SelCarType.equals("중형")){ %>checked<%} %>>중형</option>
+                                  <option name="SelCar" value="준대형" <%if(SelCarType.equals("준대형")){ %>checked<%} %>>준대형</option>
+                                  <option name="SelCar" value="대형" <%if(SelCarType.equals("대형")){ %>checked<%} %>>대형</option>
+                                  <option name="SelCar" value="승합" <%if(SelCarType.equals("승합")){ %>checked<%} %>>승합</option>
+                                  <option name="SelCar" value="SUVㅣRV" <%if(SelCarType.equals("SUVㅣRV")){ %>checked<%} %>>SUV | RV</option>
+                                  <option name="SelCar" value="전기차" <%if(SelCarType.equals("전기차")){ %>checked<%} %>>전기차</option>
+                                  <option name="SelCar" value="수입차"  <%if(SelCarType.equals("수입차")){ %>checked<%} %>>수입차</option>
                                                     
                                 </select>
                             </div>
 
                             <div class="bookcar-btn bookinput-item">
-                                <button type="submit">예약하기</button>
+                                <button type="submit">재검색</button>
                             </div>
                         </form>
                     </div>
