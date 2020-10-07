@@ -35,7 +35,7 @@ public class CarListAction implements Action {
 		Date pickDate = sdf.parse(pickup);
 		Date returnDate = sdf.parse(end);
 
-		int rentday = (int) ((returnDate.getTime() - pickDate.getTime()) / (24 * 60 * 60 * 1000));
+		int rentday = (int) ((returnDate.getTime() - pickDate.getTime()) / (24 * 60 * 60 * 1000))+1;
 		
 		System.out.println(rentday);
 		

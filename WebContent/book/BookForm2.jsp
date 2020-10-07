@@ -193,6 +193,7 @@ function search(id){
 
 
                        <form action="BookForm2.bk" method="post">
+                       
                             <div class="pick-date bookinput-item">
                                <input type="date" id="pickup_date" name="pickup_date" value="<%=pickup %>">
                             </div>
@@ -218,26 +219,22 @@ function search(id){
                             </div>
 
                             <div class="bookcar-btn bookinput-item">
+                             
                                 <button type="submit">재검색</button>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--== Book A Car Area End ==-->
-
-
+                        
+                        
+                        
+                        
+                     
 <form action="BookPro.bk" method="post">
 <input type="hidden" id="pickup_date" name="pickup_date" value="<%=pickup %>">
 <input type="hidden" id="end_date" name="end_date" value="<%=end %>">
 
-<table id="carselect">
+<table id="carselect" border="1px" >
 
-
-
-			<tr >
+			<tr>
 				<td width="100">차량명</td>
 				<td width="400">제조사</td>
 				<td width="150">분류</td>
@@ -245,10 +242,6 @@ function search(id){
 				<td width="100">색상</td>
 				<td width="100">선택</td>
 			</tr>
-				
-				
-				
-			
 			
 			<%
 			
@@ -308,6 +301,14 @@ function search(id){
 			</table>
 
 </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== Book A Car Area End ==-->
+
+
 
 <jsp:include page="/inc/Footer.jsp"/>
 
