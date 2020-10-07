@@ -121,14 +121,14 @@
 			var city_name = _path.id;
 			var new_p = document.createElement('p');
 			var province = $(_path).parent()[0].id;
-			oldcolor = $(_path).css("fill");
-			d3.select(_path).style("fill", "#cbc3ac");
+			//oldcolor = $(_path).css("fill");
+			//d3.select(_path).style("fill", "#cbc3ac"); // 해당 지역 색 변화
 			$('#info-box').css('display','inline'); // 마우스 올렸을 때 나오는 인포박스
 			document.getElementById('info-box').innerHTML=get_city_kor(city_name);
 			//console.log(city_name);
 		}).mouseout(function(event) {
 			var _path = event.target;
-			d3.select(_path).style("fill", oldcolor);
+			//d3.select(_path).style("fill", oldcolor);
 			$('#info-box').css('display','none');
 		});
 
