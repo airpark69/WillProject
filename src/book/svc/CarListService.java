@@ -9,8 +9,6 @@ import java.util.LinkedList;
 
 import book.dao.CarDAO;
 import book.vo.CarBean;
-import review.dao.ReviewDAO;
-import review.vo.ReviewBean;
 
 public class CarListService {
 
@@ -45,35 +43,6 @@ public class CarListService {
 		
 		return carList;
 	}
-	
-	//전체 자량 수 조회 getList()
-		public int getListCount() {
-			
-			int listCount = 0;
-			
-			Connection con = getConnection();
-			CarDAO reviewDAO = CarDAO.getInstance();
-			reviewDAO.setConnection(con);
-			
-			listCount = reviewDAO.selectCarCount();
-			close(con);
-			
-			return listCount;
-		}
-
-		public ArrayList<CarBean> getCarList(int page, int limit) {
-			ArrayList<CarBean> carList = null;
-			Connection con = getConnection();
-			CarDAO carDAO = CarDAO.getInstance();
-			
-			carDAO.setConnection(con);
-			
-			carList = carDAO.selectCarList(page,limit);
-			
-			close(con);
-			
-			return carList;
-		}
 	
 	
 	

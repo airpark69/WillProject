@@ -55,7 +55,7 @@ String nowPage = request.getParameter("page");
                     <div class="section-title  text-center">
                         <h2>Review</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
                 </div>
                 <!-- Page Title End -->
