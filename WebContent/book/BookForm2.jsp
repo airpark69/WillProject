@@ -192,7 +192,7 @@ function search(id){
                             </div>
 
 
-                       <form action="BookForm2.bk" method="post">
+                       <form action="BookForm2.bk" method="post" style="width:100%; margin-top: 1px">
                        
                             <div class="pick-date bookinput-item">
                                <input type="date" id="pickup_date" name="pickup_date" value="<%=pickup %>">
@@ -223,16 +223,13 @@ function search(id){
                                 <button type="submit">재검색</button>
                             </div>
                         </form>
-                        
-                        
-                        
-                        
-                     
-<form action="BookPro.bk" method="post">
+                       
+   
+               <form action="BookPro.bk" method="post">
 <input type="hidden" id="pickup_date" name="pickup_date" value="<%=pickup %>">
 <input type="hidden" id="end_date" name="end_date" value="<%=end %>">
 
-<table id="carselect" border="1px" >
+<table id="carselect" style="width:100%;" border="1px">
 
 			<tr>
 				<td width="100">차량명</td>
