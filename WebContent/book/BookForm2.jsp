@@ -232,12 +232,13 @@ function search(id){
 <table id="carselect" style="width:100%;" border="1px">
 
 			<tr>
-				<td width="100">차량명</td>
-				<td width="400">제조사</td>
-				<td width="150">분류</td>
-				<td width="100">가격</td>
-				<td width="100">색상</td>
-				<td width="100">선택</td>
+				<td width="10%">차량명</td>
+				<td width="30%">차량사진</td>
+				<td width="10%">제조사</td>
+				<td width="15%">분류</td>
+				<td width="10%">가격</td>
+				<td width="10%">색상</td>
+				<td width="10%">선택</td>
 			</tr>
 			
 			<%
@@ -266,11 +267,12 @@ function search(id){
 			 
 				%>
 				<tr >
-				<td width="100">차량명<%=carList.get(i).getCar_id() %></td>
-				<td width="400">제조사<%=carList.get(i).getCar_maker() %></td>
-				<td width="150">분류<%=carList.get(i).getCar_type() %></td>
-				<td width="100">가격<%=carList.get(i).getCar_price_normal()*rentday %></td>
-				<td width="100">색상<%=carList.get(i).getCar_color() %></td>
+				<td width="10%"><%=carList.get(i).getCar_name() %></td>
+				<td width="30%">차량사진 넣을 곳</td>
+				<td width="10%"><%=carList.get(i).getCar_maker() %></td>
+				<td width="15%"><%=carList.get(i).getCar_type() %></td>
+				<td width="10%"><%=carList.get(i).getCar_price_normal()*rentday %></td>
+				<td width="10%"><%=carList.get(i).getCar_color() %></td>
 			<%-- 				<td><input type="button" class="selbtn" id="selbtn" onclick= "location.href='BookPro.bk?car_id=<%=carList.get(i).getCar_id()%>&pickup=<%=pickup %>&end=<%=end %>&rentprice=<%=carList.get(i).getCar_price_normal() %>&member_id=<%if(id == null){%><%=snsid%><%}else{%><%=id%><%};%>'" value="예약하기"></td> --%>
 			
 				<%if(id == null){%>
