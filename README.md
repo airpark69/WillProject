@@ -1,9 +1,8 @@
 RentCar-Service 
-====
+===
 <img width="600" alt="스크린샷 2020-11-08 오후 7 27 42" src="https://user-images.githubusercontent.com/68542404/98462578-988e4a00-21f8-11eb-9b38-423c168a2c85.png">
-====
-
-<h3>목차</h3>
+===
+목차
 ----
 1. 프로그램 목표
 1. 프로그램 핵심기능
@@ -42,7 +41,7 @@ ____
 데이터베이스
 
 <img width="600" alt="스크린샷 2020-11-08 오후 2 50 38" src="https://user-images.githubusercontent.com/68542404/98458288-62d66a80-21d2-11eb-960a-eca594077f28.png">
-=
+===
 
 기능구현
  - [SNS 로그인](#-SNS-로그인)
