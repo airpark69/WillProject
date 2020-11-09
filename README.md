@@ -61,11 +61,11 @@ RentCar-Service
 
  ## SNS 로그인
  - Kakao , Naver 로그인 API 를 이용하여 로그인 기능을 구현
-<img width="600" alt="스크린샷 2020-11-09 오후 2 30 52" src="https://user-images.githubusercontent.com/68542404/98503679-7e0bad80-2298-11eb-9ca4-410bb14aa9d2.png">
+<img width="600" alt="스크린샷 2020-11-09 오후 2 30 52" src="https://user-images.githubusercontent.com/68542404/98503679-7e0bad80-2298-11eb-9ca4-410bb14aa9d2.png">
 
  
 - 해당 사이트 로그인 성공시 고유 값을 아이디값으로 받아 DB에 저장후 로그인 수행
-<img width="600" alt="스크린샷 2020-11-09 오후 2 32 36" src="https://user-images.githubusercontent.com/68542404/98503852-e35f9e80-2298-11eb-9717-c4f6b273e767.png">
+<img width="600" alt="스크린샷 2020-11-09 오후 2 32 36" src="https://user-images.githubusercontent.com/68542404/98503852-e35f9e80-2298-11eb-9717-c4f6b273e767.png">
 
 
 ## 코로나 지도
@@ -101,7 +101,8 @@ RentCar-Service
 
  - FAQ 질문 키워드 검색하면 답변글 (최대 2개) 나오도록 구현
 
-  <img width="808" alt="스크린샷 2020-11-09 오후 3 34 02" src="https://user-images.githubusercontent.com/68542404/98507516-14dc6800-22a1-11eb-9d11-e5158b33f786.png">
+
+  <img width="600" alt="스크린샷 2020-11-09 오후 3 34 02" src="https://user-images.githubusercontent.com/68542404/98507516-14dc6800-22a1-11eb-9d11-e5158b33f786.png">
   <img width="600" alt="스크린샷 2020-11-08 오후 6 27 20" src="https://user-images.githubusercontent.com/68542404/98461562-7d1f4100-21f0-11eb-8147-d4fdad67e62c.png">
   <img width="600" alt="스크린샷 2020-11-08 오후 6 26 24" src="https://user-images.githubusercontent.com/68542404/98461612-e8691300-21f0-11eb-97e3-23c81d3fb71b.png">
 
